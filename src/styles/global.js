@@ -1,4 +1,11 @@
 /** @jsx jsx */
+// SANITIZE.CSS RESETS
+import 'sanitize.css/sanitize.css';
+import 'sanitize.css/typography.css';
+import 'sanitize.css/forms.css';
+import 'sanitize.css/assets.css';
+import 'sanitize.css/reduce-motion.css';
+
 import { css } from '@emotion/react';
 import { colors } from './colors';
 import { layout, cssLayout } from './layout';

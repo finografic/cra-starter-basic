@@ -4,19 +4,26 @@ import PropTypes from 'prop-types';
 import { jsx } from '@emotion/react';
 import { styles } from './Spinner.css';
 
-export const Spinner = ({ inline, page, layout, color }) => {
+export const Spinner = ({ inline, page, layout, color, light, dark }) => {
   // SET CLASSES FROM PROPS
-  let classes = ['spinner'];
-  inline && classes.push('inline');
-  page && classes.push('page');
-  layout && classes.push('layout');
-  color && classes.push(`color-${color}`);
-  !color && classes.push('color-dark');
-  classes = classes.join(' ');
+  const getClasses = () => {
+    const classes = new Set();
+    classes.add('spinner');
+    inline && classes.add('inline');
+    page && classes.add('page');
+    layout && classes.add('layout');
+    if (color && !light && !dark) {
+      classes.add(`color-${color}`);
+    } else {
+      light && !dark && classes.add('color-light');
+      dark && !light && classes.add('color-dark');
+    }
+    return [...classes].join(' ');
+  };
 
   return (
-    <div css={styles} className={classes}>
-      <div className="loader">Loading...</div>
+    <div css={styles} className={getClasses()}>
+      <div className="spin-parts">Loading...</div>
     </div>
   );
 };
@@ -26,4 +33,6 @@ Spinner.propTypes = {
   page: PropTypes.bool,
   layout: PropTypes.bool,
   color: PropTypes.string,
+  light: PropTypes.bool,
+  dark: PropTypes.bool,
 };

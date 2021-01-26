@@ -1,9 +1,26 @@
 # 📒 **cra-starter-basic**
 
-React boilerplate, including: react/cra-customize, eslint, babel, emotion.
+**Basic React boilerplate app built with:**
+
+- React: react-app-rewired + customize-cra
+- React Context API
+- emotion CSS-in-JS
+- eslint
+- babel
 
 **Launch test:**
-`npm run start`
+
+```sh
+yarn
+yarn start
+```
+
+or
+
+```sh
+npm install
+npm run start
+```
 
 ---
 

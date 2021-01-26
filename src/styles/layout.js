@@ -1,7 +1,9 @@
 import { css } from '@emotion/react';
 import { colors } from './colors';
+import { cssBackgroundFrosted } from './special';
 
 const fontSize = 16;
+const bgColor = 'white';
 
 export const border = css`
   border-color: ${colors.greyXLight};
@@ -15,19 +17,18 @@ export const layout = {
   padding: '15px',
   borderWidth: '2px',
   borderRadius: '5px',
-};
-
-// BREAKPOINTS (px)
-export const breakpointsPX = {
-  xs: 0,
-  sm: 768,
-  md: 1024,
-  lg: 1200,
-  xl: 1600,
+  header: {
+    height: '80px',
+  },
 };
 
 // LAYOUT STYLES
 export const cssLayout = css`
+  html,
+  body {
+    background-color: ${bgColor};
+  }
+
   body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
@@ -41,7 +42,7 @@ export const cssLayout = css`
   #app {
     display: flex;
     min-height: 100vh;
-    background: white;
+    background-color: ${bgColor};
   }
 
   main {
@@ -49,7 +50,10 @@ export const cssLayout = css`
     flex-direction: column;
     flex-grow: 1;
     min-height: 100%;
-    background: white;
+    background-color: ${bgColor};
+    header + section {
+      margin-top: ${layout.header.height};
+    }
   }
 
   section {

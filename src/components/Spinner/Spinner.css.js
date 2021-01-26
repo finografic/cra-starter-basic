@@ -26,44 +26,49 @@ export const styles = css`
 
   /*** LOADER ELEMENTS ***/
 
-  &.color-light .loader {
-    color: ${colors.white};
-  }
-  &.color-dark .loader {
+  /* DEFAULT = dark */
+  & .spin-parts {
     color: ${colors.greyDark};
   }
 
-  &.color-default .loader {
+  &.color-light .spin-parts {
+    color: white;
+  }
+  &.color-dark .spin-parts {
+    color: ${colors.greyDark};
+  }
+
+  &.color-default .spin-parts {
     color: ${colors.defaultDark};
   }
 
-  &.color-info .loader {
+  &.color-info .spin-parts {
     color: ${colors.infoDark};
   }
 
-  &.color-success .loader {
+  &.color-success .spin-parts {
     color: ${colors.successDark};
   }
 
-  &.color-warning .loader {
+  &.color-warning .spin-parts {
     color: ${colors.warningDark};
   }
 
-  &.color-error .loader,
-  &.color-danger .loader {
+  &.color-error .spin-parts,
+  &.color-danger .spin-parts {
     color: ${colors.dangerDark};
   }
 
-  .loader,
-  .loader:before,
-  .loader:after {
+  .spin-parts,
+  .spin-parts:before,
+  .spin-parts:after {
     border-radius: 50%;
     width: ${circleSize};
     height: ${circleSize};
     animation-fill-mode: both;
     animation: loading ${timing}s infinite ease-in-out;
   }
-  .loader {
+  .spin-parts {
     opacity: ${circleOpacity};
     font-size: 0.8em;
     margin: 0 auto;
@@ -73,17 +78,17 @@ export const styles = css`
     animation-delay: -${timing / 11}s;
     transform: translateY(-100%);
   }
-  .loader:before,
-  .loader:after {
+  .spin-parts:before,
+  .spin-parts:after {
     content: '';
     position: absolute;
     top: 0;
   }
-  .loader:before {
+  .spin-parts:before {
     left: calc(-${circleSize}*1.5);
     animation-delay: -${timing / 5.5}s;
   }
-  .loader:after {
+  .spin-parts:after {
     left: calc(${circleSize}*1.5);
   }
 
