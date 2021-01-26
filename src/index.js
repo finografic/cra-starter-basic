@@ -10,7 +10,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router } from 'react-router-dom';
 import * as serviceWorker from 'serviceWorker';
 
-// AUTH + STORE
+// STORE
 import { GlobalProvider } from 'store';
 
 // ============================================== //

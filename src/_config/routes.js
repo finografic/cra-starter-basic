@@ -12,7 +12,6 @@ export const routes = [
     strict: true,
     component: HomePage,
     title: 'Home Page',
-    subtitle: 'Example Subtitle',
     isNav: true,
   },
 ];
